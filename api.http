@@ -1,0 +1,5 @@
+### Realizar ping
+GET http://localhost:3000/ping
+
+### scrape
+GET http://localhost:3000/scrape
