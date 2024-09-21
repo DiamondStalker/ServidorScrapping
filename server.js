@@ -22,9 +22,13 @@ app.get('/scrape', async (req, res) => {
 
         const $ = cheerio.load(data);
 
+        let text = $('[class="form-control text-box single-line"]').attr('value');
+        //text = "HOLA";
+
         res.json({
             success: true,
-            titles: $('[class="form-control text-box single-line"]').attr('value'),
+            titles: text,
+            status: text == "Caso en trámite" ? false : true
         });
 
 
